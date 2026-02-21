@@ -2,6 +2,7 @@
 // - each years and their schedule and naka SET na siya
 // - if may 2 section per year I think need pa isama un? 
 // - Kung kaya per sem??
+// - per program is naka if else.
 
 
 namespace SIS_SubjectScheduling
@@ -12,6 +13,7 @@ namespace SIS_SubjectScheduling
         {
             string program; //BSIT or DIT (could be lahat ng program)
             string year_level_section;
+            int sem;
 
             Console.WriteLine("--------------< Student Class Schedule >--------------");
             Console.WriteLine("Welcome IT student to the scheduling Page. This is where you can see your class schedule.");
@@ -27,13 +29,15 @@ namespace SIS_SubjectScheduling
             Console.Write("Enter your Year level and Section (e.g. 1-1, 1-2, 2-1 until 4-1): ");
             year_level_section = Console.ReadLine().ToUpper();
 
+            Console.Write("Enter your Program: ");
 
-            
-            
-                if (program == "BSIT")
+
+
+
+            if (program == "BSIT")
+            {
+                if (year_level_section == "1-1")
                 {
-                    if (year_level_section == "1-1")
-                    {
                     Console.WriteLine("**--------------< BSIT 1-1 CLASS SCHEDULE >--------------**");
                     Console.WriteLine("MONDAY:");
                     Console.WriteLine("10:30AM - 12:30PM  | INTRODUCTION TO COMPUTING");
@@ -61,10 +65,11 @@ namespace SIS_SubjectScheduling
                     {
                         Console.WriteLine("Invalid Program. Please try again.");
                     }
-                
-                }
-            
-        }
 
-    }
+                }
+
+            }
+
+        }
+    } 
 }//last
