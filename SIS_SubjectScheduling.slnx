@@ -1,3 +1,6 @@
 <Solution>
+  <Project Path="SIS_SubjectScheduleBusinesslogic/SIS_SubjectScheduleBusinesslogic.csproj" Id="b7aaad3d-5dcf-4f36-a41e-ddc3a0d834ef" />
+  <Project Path="SIS_SubjectScheduleDataLogic/SIS_SubjectScheduleDataLogic.csproj" Id="c23fe727-a717-47fe-8ff6-5ea99f62216f" />
+  <Project Path="SIS_SubjectScheduleModels/SIS_SubjectScheduleModels.csproj" Id="d78902dc-d636-445e-8ef8-5fdc94ddc9da" />
   <Project Path="SIS_SubjectScheduling.csproj" />
 </Solution>

@@ -7,4 +7,26 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="SIS_SubjectScheduleBusinesslogic\**" />
+    <Compile Remove="SIS_SubjectScheduleDataLogic\**" />
+    <Compile Remove="SIS_SubjectScheduleModels\**" />
+    <EmbeddedResource Remove="SIS_SubjectScheduleBusinesslogic\**" />
+    <EmbeddedResource Remove="SIS_SubjectScheduleDataLogic\**" />
+    <EmbeddedResource Remove="SIS_SubjectScheduleModels\**" />
+    <None Remove="SIS_SubjectScheduleBusinesslogic\**" />
+    <None Remove="SIS_SubjectScheduleDataLogic\**" />
+    <None Remove="SIS_SubjectScheduleModels\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove=".gitattributes" />
+    <None Remove=".gitignore" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="SIS_SubjectScheduleBusinesslogic\SIS_SubjectScheduleBusinesslogic.csproj" />
+    <ProjectReference Include="SIS_SubjectScheduleModels\SIS_SubjectScheduleModels.csproj" />
+  </ItemGroup>
+
 </Project>
