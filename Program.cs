@@ -23,12 +23,25 @@ namespace SIS_SubjectScheduling
 
             if (!SIS_BusinessLogic.Login(studentNumber, studentPassword))
             {
-                Console.WriteLine("Invalid Student Number or Password. Please try again");
-                // I'll try to add po kapag wala sa list ung student no and password, pwede sila mag register
+                Console.WriteLine(" ");
+                Console.WriteLine("Invalid Student Number or Password.");
+                Console.WriteLine("==========================================");
+                Console.Write("Do you want to register? (y/n): ");
+                string choice = Console.ReadLine();
+
+                if (choice.ToLower() == "y")
+                {
+                    SIS_BusinessLogic.Register(studentNumber, studentPassword);
+                    Console.WriteLine("Registration successful! You can now log in.");
+                }
             }
+
 
             else
             {
+                Console.WriteLine(" ");
+                Console.WriteLine(" ");
+                Console.WriteLine(" ");
                 Console.WriteLine("Login Successful :3");
                 Console.WriteLine(" ");
                 Console.WriteLine(" ");
@@ -37,6 +50,9 @@ namespace SIS_SubjectScheduling
             }
 
         }// main last
+
+
+
 
         static void StudentMenu()
         {
@@ -60,8 +76,40 @@ namespace SIS_SubjectScheduling
 
                     SIS_BusinessLogic.ScheduleBSIT(section);
 
-                    Actionsmenu();
+                    Console.WriteLine(" ");
+                    Console.WriteLine(" ");
+                    Console.WriteLine(" ");
+                    Console.WriteLine("------<<What would you like to do?>>------");
+                    Console.WriteLine("1 | See Subject Dicription");
+                    Console.WriteLine("2 | See Subject Professors");
+                    Console.WriteLine("3 | Save Schedule");
+                    Console.WriteLine("4 | Exit and Don't Save"); // if namali sila ng enter they can go back to the main menu
+                    Console.WriteLine("==========================================");
+                    Console.Write("Enter Number: ");
+                    int numberChoice = int.Parse(Console.ReadLine());
+
+                    switch (numberChoice)
+                    {
+                        case 1:
+
+                            break;
+                        case 2:
+
+                            break;
+                        case 3:
+
+                            break;
+                        case 4:
+
+                            break;
+                        default:
+                            Console.WriteLine("Sorry number is not on the list try again");
+                            break;
+                    }
+
                     break;
+
+
 
                 case "DIT":
                     Console.Write("Enter Section (1-1, 2-1, 3-1): ");
@@ -77,40 +125,7 @@ namespace SIS_SubjectScheduling
 
         }
 
-        static void Actionsmenu()
-        {
-            Console.WriteLine(" ");
-            Console.WriteLine(" ");
-            Console.WriteLine(" ");
-            Console.WriteLine("------<<What would you like to do?>>------");
-            Console.WriteLine("1 | See Subject Dicription");
-            Console.WriteLine("2 | See Subject Professors");
-            Console.WriteLine("3 | Save Schedule");
-            Console.WriteLine("4 | Exit and Don't Save"); // if namali sila ng enter they can go back to the main menu
-            Console.WriteLine("==========================================");
-            Console.WriteLine("Enter Number: ");
-            int numberChoice = int.Parse(Console.ReadLine());
-
-            switch (numberChoice)
-            {
-                case 1:
-
-                    break;
-                case 2:
-
-                    break;
-                case 3:
-
-                    break;
-                case 4:
-
-                    break;
-                default:
-                    Console.WriteLine("Sorry number is not on the list try again");
-                    break;
-            }
-
-        }
+       
     }
     
 }//last 
