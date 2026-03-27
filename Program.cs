@@ -52,8 +52,6 @@ namespace SIS_SubjectScheduling
         }// main last
 
 
-
-
         static void StudentMenu()
         {
             //try if pwede gawin na switch to ex. 1 - BSIT, 2 - BSIE, 3 - BSCPE
@@ -76,40 +74,8 @@ namespace SIS_SubjectScheduling
 
                     SIS_BusinessLogic.ScheduleBSIT(section);
 
-                    Console.WriteLine(" ");
-                    Console.WriteLine(" ");
-                    Console.WriteLine(" ");
-                    Console.WriteLine("------<<What would you like to do?>>------");
-                    Console.WriteLine("1 | See Subject Dicription");
-                    Console.WriteLine("2 | See Subject Professors");
-                    Console.WriteLine("3 | Save Schedule");
-                    Console.WriteLine("4 | Exit and Don't Save"); // if namali sila ng enter they can go back to the main menu
-                    Console.WriteLine("==========================================");
-                    Console.Write("Enter Number: ");
-                    int numberChoice = int.Parse(Console.ReadLine());
-
-                    switch (numberChoice)
-                    {
-                        case 1:
-
-                            break;
-                        case 2:
-
-                            break;
-                        case 3:
-
-                            break;
-                        case 4:
-
-                            break;
-                        default:
-                            Console.WriteLine("Sorry number is not on the list try again");
-                            break;
-                    }
-
+                    Actionsmenu();
                     break;
-
-
 
                 case "DIT":
                     Console.Write("Enter Section (1-1, 2-1, 3-1): ");
@@ -125,7 +91,40 @@ namespace SIS_SubjectScheduling
 
         }
 
-       
+        static void Actionsmenu()
+        {
+            Console.WriteLine(" ");
+            Console.WriteLine(" ");
+            Console.WriteLine(" ");
+            Console.WriteLine("------<<What would you like to do?>>------");
+            Console.WriteLine("1 | See Subject Dicription");
+            Console.WriteLine("2 | See Subject Professors");
+            Console.WriteLine("3 | Save Schedule");
+            Console.WriteLine("4 | Exit and Don't Save"); // if namali sila ng enter they can go back to the main menu
+            Console.WriteLine("==========================================");
+            Console.WriteLine("Enter Number: ");
+            int numberChoice = int.Parse(Console.ReadLine());
+
+            switch (numberChoice)
+            {
+                case 1:
+
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+
+                    break;
+                case 4:
+
+                    break;
+                default:
+                    Console.WriteLine("Sorry number is not on the list try again");
+                    break;
+            }
+
+        }
     }
     
 }//last 

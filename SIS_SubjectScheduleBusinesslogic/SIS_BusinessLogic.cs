@@ -26,7 +26,6 @@ namespace SIS_SubjectScheduleBusinesslogic
             }
         }
 
-
         //BSIT
         public static void ScheduleBSIT(string section)
         {
