@@ -25,7 +25,6 @@ namespace SIS_SubjectScheduleDataLogic
 
             if (students.Count <= 0)
             {
-                // preload your sample students
        
                 students.Add(new Student { StudentNumber = "2024-00021-BN-0", StudentPassword = "leehan21" });
                 students.Add(new Student { StudentNumber = "2025-00014-BN-0", StudentPassword = "judeah" });
@@ -50,7 +49,6 @@ namespace SIS_SubjectScheduleDataLogic
             students = loaded?.Where(s => s != null).ToList() ?? new List<Student>();
         }
 
-        // Public methods you’ll actually use
    
         public void Add(Student student)
         {
