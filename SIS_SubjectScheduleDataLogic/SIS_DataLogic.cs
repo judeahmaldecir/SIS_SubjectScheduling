@@ -11,6 +11,8 @@ namespace SIS_SubjectScheduleDataLogic
                 new Student {StudentNumber = "2024-00021-BN-0", StudentPassword = "leehan21"},
                 new Student {StudentNumber = "2025-00014-BN-0", StudentPassword = "judeah"}
             };
+
+            // mag aadd ako ng list ng all programs
         }
 
     }//last

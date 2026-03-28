@@ -9,17 +9,20 @@ namespace SIS_SubjectScheduleBusinesslogic
 {
     public class SIS_BusinessLogic
     {
-        private static StudentJsonData data = new StudentJsonData();
+        //private static StudentJsonData data = new StudentJsonData();
+
+        private static StudentDBData data = new StudentDBData();
+
 
         public static bool Login(string studentNumber, string studentPassword)
         {
-            var student = data.GetByNumber(studentNumber);
+            var student = data.GetByStudentNumber(studentNumber);
             return student != null && student.StudentPassword == studentPassword;
         }
 
         public static void Register(string studentNumber, string studentPassword)
         {
-            var student = data.GetByNumber(studentNumber);
+            var student = data.GetByStudentNumber(studentNumber);
             if (student == null)
             {
                 data.Add(new Student { StudentNumber = studentNumber.ToUpper(), StudentPassword = studentPassword });

@@ -29,4 +29,8 @@
     <ProjectReference Include="SIS_SubjectScheduleModels\SIS_SubjectScheduleModels.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="NewFolder\" />
+  </ItemGroup>
+
 </Project>
