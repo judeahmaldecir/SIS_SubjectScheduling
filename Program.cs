@@ -16,41 +16,78 @@ namespace SIS_SubjectScheduling
         {
             Console.WriteLine("*----------<< Student Scheduling >>----------*");
 
-            Console.Write("Enter your Student number: ");
-            string studentNumber = Console.ReadLine().ToUpper();
-            Console.Write("Enter your Password: ");
-            string studentPassword = Console.ReadLine();
+            Console.WriteLine(" ");
+            Console.WriteLine("<< What would you like to do? >> ");
+            Console.WriteLine("[1] Selecting Program & Section to See Schedules");
+            Console.WriteLine("    - for students that are Enrolled and Haven't seen their schedules");
+            Console.WriteLine("[2] Registration for new student ");
+            Console.WriteLine("    - for students that are NOT Enrolled yet");
+            Console.WriteLine("[3] See Saved schedule"); // may update here
+            Console.WriteLine("==========================================");
+            Console.Write("Enter Number: ");
+            int numberStartingPage = int.Parse(Console.ReadLine());
 
-            if (!SIS_BusinessLogic.Login(studentNumber, studentPassword))
+            switch (numberStartingPage)
             {
-                Console.WriteLine(" ");
-                Console.WriteLine("Invalid Student Number or Password.");
-                Console.WriteLine("==========================================");
-                Console.Write("Do you want to register? (y/n): ");
-                string choice = Console.ReadLine();
+                case 1:
+                    Console.Write("Enter your Student number: ");
+                    string studentNumber = Console.ReadLine().ToUpper();
+                    Console.Write("Enter your Password: ");
+                    string studentPassword = Console.ReadLine();
 
-                if (choice.ToLower() == "y")
-                {
+                    if (!SIS_BusinessLogic.Login(studentNumber, studentPassword))
+                    {
+                        Console.WriteLine(" ");
+                        Console.WriteLine("Invalid Student Number or Password.");
+                        Console.WriteLine("==========================================");
+                        Console.Write("Do you want to register? (y/n): ");
+                        string choice = Console.ReadLine();
+
+                        if (choice.ToLower() == "y")
+                        {
+                            SIS_BusinessLogic.Register(studentNumber, studentPassword);
+                            Console.WriteLine("Registration successful! You can now log in.");
+                        }
+                    }
+
+
+                    else
+                    {
+                        Console.WriteLine(" ");
+                        Console.WriteLine(" ");
+                        Console.WriteLine(" ");
+                        Console.WriteLine("Login Successful :3");
+                        Console.WriteLine(" ");
+                        Console.WriteLine(" ");
+                        Console.WriteLine(" ");
+
+
+
+                        StudentMenu();
+                    }
+                    break;
+
+                case 2:
+                    Console.WriteLine(" ");
+                    Console.WriteLine("---<< registration for new student >>---");
+                    Console.WriteLine(" ");
+                    Console.Write("Enter your Student number: ");
+                    studentNumber = Console.ReadLine().ToUpper();
+                    Console.Write("Enter your Password: ");
+                    studentPassword = Console.ReadLine();
                     SIS_BusinessLogic.Register(studentNumber, studentPassword);
                     Console.WriteLine("Registration successful! You can now log in.");
-                }
-            }
 
+                    break;
 
-            else
-            {
-                Console.WriteLine(" ");
-                Console.WriteLine(" ");
-                Console.WriteLine(" ");
-                Console.WriteLine("Login Successful :3");
-                Console.WriteLine(" ");
-                Console.WriteLine(" ");
-                Console.WriteLine(" ");
-                StudentMenu();
+                case 3:
+                    Console.WriteLine(" save Sched");
+                    break;
             }
 
         }// main last
 
+        //-------------------------------------------------------------------------------------------------------------------------------------------------
 
         static void StudentMenu()
         {
@@ -74,7 +111,7 @@ namespace SIS_SubjectScheduling
 
                     SIS_BusinessLogic.ScheduleBSIT(section);
 
-                    Actionsmenu();
+                    ActionsmenuSchedule();
                     break;
 
                 case "DIT":
@@ -91,21 +128,21 @@ namespace SIS_SubjectScheduling
 
         }
 
-        static void Actionsmenu()
+        static void ActionsmenuSchedule()
         {
             Console.WriteLine(" ");
             Console.WriteLine(" ");
             Console.WriteLine(" ");
             Console.WriteLine("------<<What would you like to do?>>------");
-            Console.WriteLine("1 | See Subject Dicription");
-            Console.WriteLine("2 | See Subject Professors");
-            Console.WriteLine("3 | Save Schedule");
-            Console.WriteLine("4 | Exit and Don't Save"); // if namali sila ng enter they can go back to the main menu
+            Console.WriteLine("[1] See Subject Dicription");
+            Console.WriteLine("[2] See Subject Professors");
+            Console.WriteLine("[3] Save Schedule");
+            Console.WriteLine("[4] Exit and Don't Save"); // if namali sila ng enter they can go back to the main menu
             Console.WriteLine("==========================================");
-            Console.WriteLine("Enter Number: ");
-            int numberChoice = int.Parse(Console.ReadLine());
+            Console.Write("Enter Number: ");
+            int numberChoiceScheduleActions = int.Parse(Console.ReadLine());
 
-            switch (numberChoice)
+            switch (numberChoiceScheduleActions)
             {
                 case 1:
 
@@ -117,7 +154,9 @@ namespace SIS_SubjectScheduling
 
                     break;
                 case 4:
-
+                    Console.WriteLine(" ");
+                    Console.WriteLine("Exiting...............");
+                    Console.WriteLine(" ");
                     break;
                 default:
                     Console.WriteLine("Sorry number is not on the list try again");
