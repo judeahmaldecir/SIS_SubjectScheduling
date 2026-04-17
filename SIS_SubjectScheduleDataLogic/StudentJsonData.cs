@@ -2,8 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text.Json;
 using System.Text;
+using System.Text.Json;
+using System.Xml.Linq;
 
 namespace SIS_SubjectScheduleDataLogic
 {
@@ -69,5 +70,10 @@ namespace SIS_SubjectScheduleDataLogic
             return students.FirstOrDefault(x => x.StudentNumber.ToUpper() == studentNumber.ToUpper());
         }
 
+        public void SaveAll(List<Student> studentsFromDb)
+        {
+            string jsonString = JsonSerializer.Serialize(studentsFromDb, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(_jsonFileName, jsonString);
+        }
     }
 }
