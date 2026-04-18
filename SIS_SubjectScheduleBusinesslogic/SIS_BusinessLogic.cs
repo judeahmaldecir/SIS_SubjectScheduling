@@ -130,8 +130,6 @@ namespace SIS_SubjectScheduleBusinesslogic
             data.ShowSchedule(student);
             }
 
-
-
         // ------------------------------------------- Showing Subject Description T.T !!!
         public static void ShowSubjectDescription(Student student)
         {

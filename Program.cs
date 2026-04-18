@@ -1,6 +1,4 @@
-﻿// ADD MORE PROGRAM AND SCHEDULE ON THE LIST
-
-using SIS_SubjectScheduleBusinesslogic;
+﻿using SIS_SubjectScheduleBusinesslogic;
 using SIS_SubjectScheduleDataLogic;
 using SIS_SubjectScheduleModels;
 using System;
@@ -80,13 +78,7 @@ namespace SIS_SubjectScheduling
                                 Console.WriteLine(" ");
                                 Console.WriteLine(" ");
 
-                                //Console.WriteLine("""
-
-
-                                //                  Registration successful! You can now log in SELECT [number 1] again to add PROGRAM & SECTION)
-
-
-                                //                  """);
+                
                                 mainmenu();
                             }
                         }
@@ -99,7 +91,6 @@ namespace SIS_SubjectScheduling
                             Console.WriteLine(" ");
                             Console.WriteLine(" ");
                             Console.WriteLine("You already have a program and section!");
-                            Console.WriteLine("Please use Choice [3] to view or update your schedule :3");
                             Console.WriteLine(" ");
                             Console.WriteLine(" ");
                             mainmenu();
@@ -135,7 +126,7 @@ namespace SIS_SubjectScheduling
                         Console.WriteLine(" ");
                         Console.WriteLine(" ");
                         Console.WriteLine("This student number already exists!");
-                        Console.WriteLine("Please enter Choice [number 3] to check your schedule or if you want any changes");
+                        Console.WriteLine("Please enter Choice [number 3] to check your schedule or if you want any changes.");
                         Console.WriteLine(" ");
                         Console.WriteLine(" ");
                         mainmenu();
