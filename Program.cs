@@ -15,6 +15,12 @@ namespace SIS_SubjectScheduling
     {
         static void Main(string[] args)
         {
+            mainmenu();
+
+        }// main last
+
+        static void mainmenu()
+        {
             // ------------------------------------------- Main Menu!!!
             Console.WriteLine("*----------<< Student Scheduling >>----------*");
 
@@ -60,9 +66,11 @@ namespace SIS_SubjectScheduling
                                 Console.WriteLine(" ");
                                 Console.WriteLine(" ");
                                 Console.WriteLine("This student number already exists!");
-                                Console.WriteLine("Please log in instead of registering again.");
+                                Console.WriteLine("Please log in using [number 1] " +
+                                    "\n or if you have aleady a Program & Schedule [number 2] choice instead of registering again.");
                                 Console.WriteLine(" ");
                                 Console.WriteLine(" ");
+                                mainmenu();
                             }
                             else
                             {
@@ -71,12 +79,21 @@ namespace SIS_SubjectScheduling
                                 Console.WriteLine("Registration successful! You can now log in SELECT [number 1] again to add PROGRAM & SECTION).");
                                 Console.WriteLine(" ");
                                 Console.WriteLine(" ");
+
+                                //Console.WriteLine("""
+
+
+                                //                  Registration successful! You can now log in SELECT [number 1] again to add PROGRAM & SECTION)
+
+
+                                //                  """);
+                                mainmenu();
                             }
                         }
                     }
                     else
                     {
-          
+
                         if (!string.IsNullOrEmpty(student.Program) && !string.IsNullOrEmpty(student.Section))
                         {
                             Console.WriteLine(" ");
@@ -85,6 +102,7 @@ namespace SIS_SubjectScheduling
                             Console.WriteLine("Please use Choice [3] to view or update your schedule :3");
                             Console.WriteLine(" ");
                             Console.WriteLine(" ");
+                            mainmenu();
                         }
                         else
                         {
@@ -94,7 +112,7 @@ namespace SIS_SubjectScheduling
                             Console.WriteLine(" ");
                             Console.WriteLine(" ");
                             StudentMenu(studentNumber);
-                            
+
                         }
                     }
                     break;
@@ -120,6 +138,7 @@ namespace SIS_SubjectScheduling
                         Console.WriteLine("Please enter Choice [number 3] to check your schedule or if you want any changes");
                         Console.WriteLine(" ");
                         Console.WriteLine(" ");
+                        mainmenu();
                     }
                     else
                     {
@@ -128,6 +147,7 @@ namespace SIS_SubjectScheduling
                         Console.WriteLine("Registration successful! You can now log in SELECT [number 1] again to add PROGRAM & SECTION).");
                         Console.WriteLine(" ");
                         Console.WriteLine(" ");
+                        mainmenu();
                     }
                     break;
 
@@ -149,6 +169,7 @@ namespace SIS_SubjectScheduling
                         Console.WriteLine("You don't have any Account yet, please register first SELECT Choice [number 2] - Register");
                         Console.WriteLine(" ");
                         Console.WriteLine(" ");
+                        mainmenu();
                     }
                     else
                     {
@@ -160,6 +181,7 @@ namespace SIS_SubjectScheduling
                             Console.WriteLine("You have not selected a program/section yet.");
                             Console.WriteLine(" ");
                             Console.WriteLine(" ");
+                            mainmenu();
 
                             StudentMenu(studentNumber);
                         }
@@ -181,8 +203,7 @@ namespace SIS_SubjectScheduling
                     break;
 
             }
-
-        }// main last
+        }
 
         // ------------------------------------------- Student Program and Section selection!!!
 
@@ -294,7 +315,7 @@ namespace SIS_SubjectScheduling
             Console.WriteLine("------<< Student Account Management >>------");
             Console.WriteLine("[1] Change Password");
             Console.WriteLine("[2] Deletion of Schedule (section & program)");
-            Console.WriteLine("[3] Retriving of past section & program");
+            Console.WriteLine("[3] Retrieving of past section & program");
             Console.WriteLine("[4] Back");
             Console.WriteLine("==========================================");
             Console.Write("Enter a Number: ");
